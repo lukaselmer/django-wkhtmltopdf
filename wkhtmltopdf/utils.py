@@ -95,6 +95,7 @@ def wkhtmltopdf(pages, output=None, **kwargs):
     ck_kwargs = {'env': env}
     if hasattr(sys.stderr, 'fileno'):
         ck_kwargs['stderr'] = sys.stderr
+    ck_kwargs['stderr'] = None
     return check_output(ck_args, **ck_kwargs)
 
 
